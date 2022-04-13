@@ -1,3 +1,5 @@
+package com.ignore;
+
 import javax.swing.*;
 import java.awt.*;
 

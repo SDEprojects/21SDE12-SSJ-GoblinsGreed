@@ -1,20 +1,37 @@
 package com.GameBoard.characters;
+
 import com.GameBoard.main.GamePanel;
 import com.GameBoard.main.KeyHandler;
-import java.awt.*;
-import java.io.IOException;
-import java.awt.image.BufferedImage;
-import java.util.Objects;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
-public class Player extends Characters {
+public class Player extends Characters{
     GamePanel gp;
     KeyHandler keyH;
+
+    public final int screenX;
+    public final int screenY;
+    int hasKey = 0;
 
     public Player(GamePanel gp, KeyHandler keyH){
         this.gp = gp;
         this.keyH = keyH;
+
+        screenX = 100;
+        screenY = 100;
+
+        solidArea = new Rectangle(8, 16, 32, 32);
+        solidArea.x = 8;
+        solidArea.y = 16;
+
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
+
+        solidArea.width = 32;
+        solidArea.height = 32;
 
         setDefaultValues();
         getPlayerImage();
@@ -22,22 +39,22 @@ public class Player extends Characters {
 
     public void setDefaultValues(){
         //start position
-        x = 100;
-        y = 100;
+        worldX = gp.tileSize * 2;
+        worldY = gp.tileSize * 2;
         speed = 4;
         direction = "down";
     }
 
     public void getPlayerImage(){
         try{
-            up1 = ImageIO.read(getClass().getResourceAsStream("/images/player/goblin_up1.png"));
-            up2 = ImageIO.read(getClass().getResourceAsStream("/images/player/goblin_up2.png"));
-            down1 = ImageIO.read(getClass().getResourceAsStream("/images/player/goblin_dn1.png"));
-            down2 = ImageIO.read(getClass().getResourceAsStream("/images/player/goblin_dn2.png"));
-            right1 = ImageIO.read(getClass().getResourceAsStream("/images/player/goblin_rt1.png"));
-            right2 = ImageIO.read(getClass().getResourceAsStream("/images/player/goblin_rt2.png"));
-            left1 = ImageIO.read(getClass().getResourceAsStream("/images/player/goblin_lf1.png"));
-            left2 = ImageIO.read(getClass().getResourceAsStream("images/player/goblin_lf2.png"));
+            up1 = ImageIO.read(getClass().getResourceAsStream("/player/goblin_up1.png"));
+            up2 = ImageIO.read(getClass().getResourceAsStream("/player/goblin_up2.png"));
+            down1 = ImageIO.read(getClass().getResourceAsStream("/player/goblin_dn1.png"));
+            down2 = ImageIO.read(getClass().getResourceAsStream("/player/goblin_dn2.png"));
+            right1 = ImageIO.read(getClass().getResourceAsStream("/player/goblin_rt1.png"));
+            right2 = ImageIO.read(getClass().getResourceAsStream("/player/goblin_rt2.png"));
+            left1 = ImageIO.read(getClass().getResourceAsStream("/player/goblin_lf1.png"));
+            left2 = ImageIO.read(getClass().getResourceAsStream("/player/goblin_lf2.png"));
 
         }catch(IOException e){
             e.printStackTrace();
@@ -46,23 +63,49 @@ public class Player extends Characters {
 
     public void update(){
 
-        if(keyH.upPressed || keyH.downPressed || keyH.leftPressed || keyH.rightPressed ){
+        if(keyH.upPressed == true || keyH.downPressed == true || keyH.leftPressed == true || keyH.rightPressed == true){
             if(keyH.upPressed == true){
                 direction = "up";
-                y -= speed;
             }
+
             else if(keyH.downPressed == true){
                 direction = "down";
-                y += speed;
             }
+
             else if(keyH.rightPressed == true){
                 direction = "right";
-                x += speed;
             }
+
             else if(keyH.leftPressed == true){
                 direction = "left";
-                x -= speed;
             }
+
+            //CHECK TILE COLLISION
+            collisionOn = false;
+            gp.cChecker.checkTile(this);
+
+            // check obj collision
+            int objIndex = gp.cChecker.checkObject(this, true);
+            pickUpObject(objIndex);
+
+            //if collision is false, then player can move
+            if(collisionOn == false){
+
+                switch(direction){
+                    case "up": worldY -= speed;
+                        break;
+
+                    case "down": worldY += speed;
+                        break;
+
+                    case "right": worldX += speed;
+                        break;
+
+                    case "left": worldX -= speed;
+                        break;
+                }
+            }
+
             spriteCounter++;
             if(spriteCounter > 20){
                 if(spriteNum == 1){
@@ -71,6 +114,29 @@ public class Player extends Characters {
                     spriteNum = 1;
                 }
                 spriteCounter = 0;
+            }
+        }
+
+    }
+
+    public void pickUpObject (int i) {
+
+        if(i != 999) {
+            String objectName = gp.obj[i].name;
+
+            switch (objectName) {
+                case "Key":
+                    hasKey++;
+                    gp.obj[i] = null;
+                    System.out.println("Key: " + hasKey);
+                    break;
+                case "Door":
+                    if(hasKey > 0) {
+                        gp.obj[i] = null;
+                        hasKey--;
+                    }
+                    System.out.println("Key: " +hasKey);
+                    break;
             }
         }
 
@@ -118,6 +184,6 @@ public class Player extends Characters {
                 }
                 break;
         }
-        g2.drawImage(image, x, y, gp.tileSize, gp.tileSize, null);
+        g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
     }
 }

@@ -1,3 +1,5 @@
+package com.ignore;
+
 import org.json.simple.parser.ParseException;
 import java.io.IOException;
 import com.GameLogic.Game;
