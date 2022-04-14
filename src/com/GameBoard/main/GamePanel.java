@@ -1,9 +1,9 @@
-package com.GameBoard.main;
+package main;
 import javax.swing.JPanel;
 
-import com.GameBoard.characters.*;
-import com.GameBoard.object.SuperObject;
-import com.GameBoard.tile.*;
+import characters.*;
+import object.SuperObject;
+import tile.*;
 
 
 import java.awt.*;
@@ -29,7 +29,7 @@ public class GamePanel extends JPanel implements Runnable {
     int FPS = 60;
 
     TileManager tileM = new TileManager(this);
-    KeyHandler keyH = new KeyHandler();
+    public KeyHandler keyH = new KeyHandler();
     Sound music = new Sound();
     Sound se = new Sound();
     public CollisionChecker cChecker = new CollisionChecker(this);
@@ -41,8 +41,8 @@ public class GamePanel extends JPanel implements Runnable {
 
     // Character and Objects
     public Player player = new Player(this, keyH);
-    public SuperObject obj[] = new SuperObject[10];
-    public Characters npc[] = new Characters[10];
+    public SuperObject[] obj = new SuperObject[10];
+    public Characters[] npc = new Characters[10];
 
     // Game States
     public int gameState;
@@ -61,9 +61,10 @@ public class GamePanel extends JPanel implements Runnable {
 
     public void setupGame() {
         aSetter.setObject();
-        //aSetter.setNPC();
+        aSetter.setNPC();
         playMusic(0);
-        gameState = titleState;
+        stopMusic();
+        gameState = playState;
     }
 
     public void startGameThread(){
@@ -96,8 +97,19 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     public void update(){
-
-        player.update();
+        if(gameState == playState) {
+            // player
+            player.update();
+            // npc
+            for(int i = 0; i < npc.length; i++) {
+                if(npc[i] != null) {
+                    npc[i].update();
+                }
+            }
+        }
+        if(gameState == pauseState) {
+            System.out.println("going to pause");
+        }
     }
 
 
@@ -107,10 +119,10 @@ public class GamePanel extends JPanel implements Runnable {
         Graphics2D g2 = (Graphics2D)g;
 
         // Debugging
-        long drawStart = 0;
-        if(keyH.checkDrawTime == true) {
-            drawStart = System.nanoTime();
-        }
+//        long drawStart = 0;
+//        if(keyH.checkDrawTime == true) {
+//            drawStart = System.nanoTime();
+//        }
 
         // Title Screen
         if(gameState == titleState) {
@@ -129,11 +141,11 @@ public class GamePanel extends JPanel implements Runnable {
             }
 
             // NPC
-//            for(int i = 0; i < npc.length; i++){
-//                if(npc[i] != null) {
-//                    npc[i].draw(g2);
-//                }
-//            }
+            for(int i = 0; i < npc.length; i++){
+                if(npc[i] != null) {
+                    npc[i].draw(g2);
+                }
+            }
 
             // player
             player.repaint(g2);
@@ -146,13 +158,13 @@ public class GamePanel extends JPanel implements Runnable {
 
 
         // debug
-        if(keyH.checkDrawTime == true) {
-            long drawEnd = System.nanoTime();
-            long passed = drawEnd - drawStart;
-            g2.setColor(Color.white);
-            g2.drawString("Draw Time: " + passed, 10, 400);
-            System.out.println("Draw Time: " + passed);
-        }
+//        if(keyH.checkDrawTime == true) {
+//            long drawEnd = System.nanoTime();
+//            long passed = drawEnd - drawStart;
+//            g2.setColor(Color.white);
+//            g2.drawString("Draw Time: " + passed, 10, 400);
+//            System.out.println("Draw Time: " + passed);
+//        }
 
         g2.dispose();
     }

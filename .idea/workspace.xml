@@ -9,62 +9,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c6f596e-3047-4150-9fb0-0799964967fa" name="Changes" comment="music button starts the song, AB#421">
+    <list default="true" id="6c6f596e-3047-4150-9fb0-0799964967fa" name="Changes" comment="SoundFX implemented, Music works, AB#421, AB#535">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/group5-goblin-greed.iml" beforeDir="false" afterPath="$PROJECT_DIR$/group5-goblin-greed.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/group5_goblin_greed_jar/group5-goblin-greed.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/group5_goblin_greed_jar/group5-goblin-greed.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/group5-goblin-greed/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/Art/ASCII_Art.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/characters/Characters.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/characters/Characters.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/characters/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/characters/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/images/player/goblin_dn1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/images/player/goblin_dn2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/images/player/goblin_lf1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/images/player/goblin_lf2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/images/player/goblin_rt1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/images/player/goblin_rt2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/images/player/goblin_up1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/images/player/goblin_up2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/main/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/main/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/main/KeyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/main/KeyHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameLogic/BattleMechanics.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameLogic/Game.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameLogic/PlayerMechanics.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/Imports/ImportJSON.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/Items/Armor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/Items/Item.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/Items/StoryItems.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/Items/Weapons.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/JsonObjects/armor.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/JsonObjects/characterList.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/JsonObjects/enemies.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/JsonObjects/items.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/JsonObjects/npcs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/JsonObjects/rooms.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/JsonObjects/storyItem.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/JsonObjects/weapons.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/Players/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/Rooms/Room.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/Story/Story.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/Utility/Printer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ignore/GUITest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ignore/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/GameBoard/characters/Characters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/characters/Characters.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/GameBoard/characters/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/characters/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/images/player/goblin_dn1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_dn1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/images/player/goblin_dn2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_dn2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/images/player/goblin_lf1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_lf1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/images/player/goblin_lf2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_lf2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/images/player/goblin_rt1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_rt1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/images/player/goblin_rt2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_rt2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/images/player/goblin_up1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_up1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/images/player/goblin_up2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_up2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/GameBoard/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/main/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/GameBoard/main/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/main/KeyHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/GameBoard/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_dn1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_dn2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_lf1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_lf2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_rt1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_rt2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_up1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_up2.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +66,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "last_opened_file_path": "C:/Capstone_Goblin_Greed/resources"
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Goblins_Greed-dev"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -194,6 +155,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1648173238158</updated>
+      <workItem from="1649958320445" duration="349000" />
     </task>
     <task id="LOCAL-00001" summary="Added title screen music button(maybe just will add it to the title menu), AB#421">
       <created>1649707564457</created>
@@ -209,8 +171,18 @@
       <option name="project" value="LOCAL" />
       <updated>1649709514595</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="SoundFX implemented, Music works, AB#421, AB#535">
+      <created>1649874127487</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1649874127487</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -226,7 +198,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added title screen music button(maybe just will add it to the title menu), AB#421" />
     <MESSAGE value="music button starts the song, AB#421" />
-    <option name="LAST_COMMIT_MESSAGE" value="music button starts the song, AB#421" />
+    <MESSAGE value="SoundFX implemented, Music works, AB#421, AB#535" />
+    <option name="LAST_COMMIT_MESSAGE" value="SoundFX implemented, Music works, AB#421, AB#535" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
