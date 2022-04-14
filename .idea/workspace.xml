@@ -9,22 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c6f596e-3047-4150-9fb0-0799964967fa" name="Changes" comment="SoundFX implemented, Music works, AB#421, AB#535">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6c6f596e-3047-4150-9fb0-0799964967fa" name="Changes" comment="Added dialogue and health, AB#565">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/characters/Characters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/characters/Characters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/characters/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/characters/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/main/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/main/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/main/KeyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_dn1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_dn2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_lf1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_lf2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_rt1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_rt2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_up1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/res/player/goblin_up2.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +141,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1648173238158</updated>
-      <workItem from="1649958320445" duration="349000" />
+      <workItem from="1649958320445" duration="972000" />
     </task>
     <task id="LOCAL-00001" summary="Added title screen music button(maybe just will add it to the title menu), AB#421">
       <created>1649707564457</created>
@@ -178,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649874127487</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added dialogue and health, AB#565">
+      <created>1649958695071</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1649958695071</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,7 +192,8 @@
     <MESSAGE value="Added title screen music button(maybe just will add it to the title menu), AB#421" />
     <MESSAGE value="music button starts the song, AB#421" />
     <MESSAGE value="SoundFX implemented, Music works, AB#421, AB#535" />
-    <option name="LAST_COMMIT_MESSAGE" value="SoundFX implemented, Music works, AB#421, AB#535" />
+    <MESSAGE value="Added dialogue and health, AB#565" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added dialogue and health, AB#565" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -8,10 +8,10 @@ public class KeyHandler implements KeyListener{
 
     GamePanel gp;
     public boolean upPressed, downPressed, rightPressed, leftPressed, enterPressed;
-    // Debugging
-    boolean checkDrawTime = false;
 
-    public KeyHandler(){
+
+    public KeyHandler(GamePanel gp){
+        this.gp = gp;
     }
 
     @Override
@@ -40,7 +40,7 @@ public class KeyHandler implements KeyListener{
             if (code == KeyEvent.VK_ENTER){
                 if(gp.ui.commandNum == 0){
                     gp.gameState = gp.playState;
-                    gp.playMusic(0);
+                    gp.playMusic(1);
                 }
                 if(gp.ui.commandNum == 1) {
                     // TODO later continue game
@@ -55,7 +55,7 @@ public class KeyHandler implements KeyListener{
         }
 
         // Play State
-        else if(gp.gameState == gp.playState) {
+        if(gp.gameState == gp.playState) {
             if (code == KeyEvent.VK_UP) {
                 upPressed = true;
             }
