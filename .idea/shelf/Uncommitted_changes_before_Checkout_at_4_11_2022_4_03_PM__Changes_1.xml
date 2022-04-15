@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_4_11_2022_4_03_PM_[Changes]1" date="1649707434355" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_11_2022_4_03_PM_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 4/11/2022 4:03 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/group5-goblin-greed/com/GameBoard/characters/Player.class" />
+    <option name="AFTER_PATH" value="out/production/group5-goblin-greed/com/GameBoard/characters/Player.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_11_2022_4_03_PM_[Changes]1/Player.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/group5-goblin-greed/com/GameLogic/Game.class" />
+    <option name="AFTER_PATH" value="out/production/group5-goblin-greed/com/GameLogic/Game.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_11_2022_4_03_PM_[Changes]1/Game.class" />
+  </binary>
+</changelist>

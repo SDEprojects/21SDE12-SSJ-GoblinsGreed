@@ -1,0 +1,276 @@
+Index: src/com/GameBoard/characters/Player.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.GameBoard.characters;\r\nimport com.GameBoard.main.GamePanel;\r\nimport com.GameBoard.main.KeyHandler;\r\nimport java.awt.*;\r\nimport java.io.IOException;\r\nimport java.awt.image.BufferedImage;\r\nimport java.util.Objects;\r\n\r\nimport javax.imageio.ImageIO;\r\n\r\npublic class Player extends Characters {\r\n    GamePanel gp;\r\n    KeyHandler keyH;\r\n\r\n    public Player(GamePanel gp, KeyHandler keyH){\r\n        this.gp = gp;\r\n        this.keyH = keyH;\r\n\r\n        setDefaultValues();\r\n        getPlayerImage();\r\n    }\r\n\r\n    public void setDefaultValues(){\r\n        //start position\r\n        x = 100;\r\n        y = 100;\r\n        speed = 4;\r\n        direction = \"down\";\r\n    }\r\n\r\n    public void getPlayerImage(){\r\n        try{\r\n            up1 = ImageIO.read(getClass().getResourceAsStream(\"/images/player/goblin_up1.png\"));\r\n            up2 = ImageIO.read(getClass().getResourceAsStream(\"/images/player/goblin_up2.png\"));\r\n            down1 = ImageIO.read(getClass().getResourceAsStream(\"/images/player/goblin_dn1.png\"));\r\n            down2 = ImageIO.read(getClass().getResourceAsStream(\"/images/player/goblin_dn2.png\"));\r\n            right1 = ImageIO.read(getClass().getResourceAsStream(\"/images/player/goblin_rt1.png\"));\r\n            right2 = ImageIO.read(getClass().getResourceAsStream(\"/images/player/goblin_rt2.png\"));\r\n            left1 = ImageIO.read(getClass().getResourceAsStream(\"/images/player/goblin_lf1.png\"));\r\n            left2 = ImageIO.read(getClass().getResourceAsStream(\"images/player/goblin_lf2.png\"));\r\n\r\n        }catch(IOException e){\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    public void update(){\r\n\r\n        if(keyH.upPressed || keyH.downPressed || keyH.leftPressed || keyH.rightPressed ){\r\n            if(keyH.upPressed == true){\r\n                direction = \"up\";\r\n                y -= speed;\r\n            }\r\n            else if(keyH.downPressed == true){\r\n                direction = \"down\";\r\n                y += speed;\r\n            }\r\n            else if(keyH.rightPressed == true){\r\n                direction = \"right\";\r\n                x += speed;\r\n            }\r\n            else if(keyH.leftPressed == true){\r\n                direction = \"left\";\r\n                x -= speed;\r\n            }\r\n            spriteCounter++;\r\n            if(spriteCounter > 20){\r\n                if(spriteNum == 1){\r\n                    spriteNum = 2;\r\n                } else if(spriteNum == 2){\r\n                    spriteNum = 1;\r\n                }\r\n                spriteCounter = 0;\r\n            }\r\n        }\r\n\r\n    }\r\n\r\n    public void repaint(Graphics2D g2){\r\n        // g2.setColor(Color.GREEN);\r\n        // g2.fillRect(x, y, gp.tileSize, gp.tileSize);\r\n        BufferedImage image = null;\r\n\r\n        switch(direction){\r\n            case \"up\":\r\n                if(spriteNum == 1){\r\n                    image = up1;\r\n                }\r\n                if(spriteNum == 2){\r\n                    image = up2;\r\n                }\r\n                break;\r\n\r\n            case \"down\":\r\n                if(spriteNum == 1){\r\n                    image = down1;\r\n                }\r\n                if(spriteNum == 2){\r\n                    image = down2;\r\n                }\r\n                break;\r\n\r\n            case \"right\":\r\n                if(spriteNum == 1){\r\n                    image = right1;\r\n                }\r\n                if(spriteNum == 2){\r\n                    image = right2;\r\n                }\r\n                break;\r\n\r\n            case \"left\":\r\n                if(spriteNum == 1){\r\n                    image = left1;\r\n                }\r\n                if(spriteNum == 2){\r\n                    image = left2;\r\n                }\r\n                break;\r\n        }\r\n        g2.drawImage(image, x, y, gp.tileSize, gp.tileSize, null);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/com/GameBoard/characters/Player.java b/src/com/GameBoard/characters/Player.java
+--- a/src/com/GameBoard/characters/Player.java	(revision 17f4da4b0ea82e9229ad5192b52951331a4ff624)
++++ b/src/com/GameBoard/characters/Player.java	(date 1649363469422)
+@@ -30,14 +30,14 @@
+ 
+     public void getPlayerImage(){
+         try{
+-            up1 = ImageIO.read(getClass().getResourceAsStream("/images/player/goblin_up1.png"));
+-            up2 = ImageIO.read(getClass().getResourceAsStream("/images/player/goblin_up2.png"));
+-            down1 = ImageIO.read(getClass().getResourceAsStream("/images/player/goblin_dn1.png"));
+-            down2 = ImageIO.read(getClass().getResourceAsStream("/images/player/goblin_dn2.png"));
+-            right1 = ImageIO.read(getClass().getResourceAsStream("/images/player/goblin_rt1.png"));
+-            right2 = ImageIO.read(getClass().getResourceAsStream("/images/player/goblin_rt2.png"));
+-            left1 = ImageIO.read(getClass().getResourceAsStream("/images/player/goblin_lf1.png"));
+-            left2 = ImageIO.read(getClass().getResourceAsStream("images/player/goblin_lf2.png"));
++            up1 = ImageIO.read(getClass().getResourceAsStream("/res/player/goblin_up1.png"));
++            up2 = ImageIO.read(getClass().getResourceAsStream("/res/player/goblin_up2.png"));
++            down1 = ImageIO.read(getClass().getResourceAsStream("/res/player/goblin_dn1.png"));
++            down2 = ImageIO.read(getClass().getResourceAsStream("/res/player/goblin_dn2.png"));
++            right1 = ImageIO.read(getClass().getResourceAsStream("/res/player/goblin_rt1.png"));
++            right2 = ImageIO.read(getClass().getResourceAsStream("/res/player/goblin_rt2.png"));
++            left1 = ImageIO.read(getClass().getResourceAsStream("/res/player/goblin_lf1.png"));
++            left2 = ImageIO.read(getClass().getResourceAsStream("/res/player/goblin_lf2.png"));
+ 
+         }catch(IOException e){
+             e.printStackTrace();
+Index: src/GUITest.java
+===================================================================
+diff --git a/src/GUITest.java b/src/GUITest.java
+deleted file mode 100644
+--- a/src/GUITest.java	(revision 17f4da4b0ea82e9229ad5192b52951331a4ff624)
++++ /dev/null	(revision 17f4da4b0ea82e9229ad5192b52951331a4ff624)
+@@ -1,46 +0,0 @@
+-import javax.swing.*;
+-import java.awt.*;
+-
+-public class GUITest {
+-    public static void main(String[] args) {
+-
+-        // Creating the frame
+-        JFrame frame = new JFrame("GUI Test");
+-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+-        frame.setSize(400,400);
+-
+-        // Creating the Menu Bar and Adding Components
+-
+-        JMenuBar mb = new JMenuBar();
+-        JMenu m1 = new JMenu("FILE");
+-        JMenu m2 = new JMenu("Help");
+-        mb.add(m1);
+-        mb.add(m2);
+-        JMenuItem m11 = new JMenuItem("Open");
+-        JMenuItem m22 = new JMenuItem("Save as");
+-        m1.add(m11);
+-        m1.add(m22);
+-
+-        //Creating the panel at bottom and adding components
+-        JPanel panel = new JPanel(); // the panel is not visible in output
+-        JLabel label = new JLabel("Enter Text");
+-        JTextField tf = new JTextField(10); // accepts up to 10 characters
+-        JButton send = new JButton("Send");
+-        JButton reset = new JButton("Reset");
+-        panel.add(label); // Components added using Flow Layout
+-        panel.add(tf);
+-        panel.add(send);
+-        panel.add(reset);
+-
+-        // Text area at the center
+-
+-        JTextArea ta = new JTextArea();
+-
+-        // Adding components to the frame
+-
+-        frame.getContentPane().add(BorderLayout.SOUTH, panel);
+-        frame.getContentPane().add(BorderLayout.NORTH, mb);
+-        frame.getContentPane().add(BorderLayout.CENTER, ta);
+-        frame.setVisible(true);
+-    }
+-}
+Index: src/GUITest/GUITest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/GUITest/GUITest.java b/src/GUITest/GUITest.java
+new file mode 100644
+--- /dev/null	(date 1649365769275)
++++ b/src/GUITest/GUITest.java	(date 1649365769275)
+@@ -0,0 +1,25 @@
++package GUITest;
++
++import javax.swing.*;
++import java.awt.*;
++
++public class GUITest extends JPanel{
++
++    // SCREEN SETTINGS
++    final int originalTileSize = 16; // 16 x 16 tiles
++    final int scale = 3;
++
++    final int tileSize = originalTileSize * scale; // 48 x 48 tiles
++    final int maxScreenCol = 16; // 16 columns
++    final int maxScreenRow = 12; // 12 rows
++    final int screenWidth = tileSize * maxScreenCol; // 768 pixels
++    final int screenHeight = tileSize * maxScreenRow; //
++
++    public GUITest () {
++        this.setPreferredSize(new Dimension(screenWidth, screenHeight));
++//        this.setBackground(Color.white);
++        this.setDoubleBuffered(true); // better rendering performance
++
++    }
++
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ArtifactsWorkspaceSettings\">\r\n    <artifacts-to-build>\r\n      <artifact name=\"group5-goblin-greed:jar\" />\r\n    </artifacts-to-build>\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"6c6f596e-3047-4150-9fb0-0799964967fa\" name=\"Changes\" comment=\"menu refactor, AB#418\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameLogic/Game.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameLogic/Game.class\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"dev\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GithubProjectSettings\">\r\n    <option name=\"branchProtectionPatterns\">\r\n      <list>\r\n        <option value=\"dev\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"26rEJvuLBCQYvzegYNuhBxqyvCF\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/json-simple-1.1.jar\" />\r\n    <property name=\"project.structure.last.edited\" value=\"Artifacts\" />\r\n    <property name=\"project.structure.proportion\" value=\"0.15\" />\r\n    <property name=\"project.structure.side.proportion\" value=\"0.2\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\lichysar\\Documents\\GitHub\\Capstone_Goblin_Greed\\src\\com\\GameBoard\\images\\player\" />\r\n      <recent name=\"C:\\Users\\lichysar\\Documents\\GitHub\\Capstone_Goblin_Greed\\src\\com\\GameBoard\\images\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.Main (1)\">\r\n    <configuration name=\"GUITest\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"GUITest\" />\r\n      <module name=\"group5-goblin-greed\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Game\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.GameLogic.Game\" />\r\n      <module name=\"group5-goblin-greed\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.GameLogic.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Main (1)\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.GameBoard.main.Main\" />\r\n      <module name=\"group5-goblin-greed\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.GameBoard.main.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n        <option name=\"com.soywiz.korge.intellij.UpdateResourceBeforeRunTask\" enabled=\"false\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\r\n      <module name=\"group5-goblin-greed\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"group5-goblin-greed.jar\" type=\"JarApplication\" temporary=\"true\">\r\n      <option name=\"JAR_PATH\" value=\"$PROJECT_DIR$/out/artifacts/group5_goblin_greed_jar/group5-goblin-greed.jar\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main (1)\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.Game\" />\r\n        <item itemvalue=\"Application.GUITest\" />\r\n        <item itemvalue=\"JAR Application.group5-goblin-greed.jar\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"6c6f596e-3047-4150-9fb0-0799964967fa\" name=\"Changes\" comment=\"\" />\r\n      <created>1648173238158</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1648173238158</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 17f4da4b0ea82e9229ad5192b52951331a4ff624)
++++ b/.idea/workspace.xml	(date 1649365429032)
+@@ -9,9 +9,35 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="6c6f596e-3047-4150-9fb0-0799964967fa" name="Changes" comment="menu refactor, AB#418">
++    <list default="true" id="6c6f596e-3047-4150-9fb0-0799964967fa" name="Changes" comment="Committing so I can fix the conflicts">
++      <change afterPath="$PROJECT_DIR$/src/GUITest/GUITest.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/group5-goblin-greed.iml" beforeDir="false" afterPath="$PROJECT_DIR$/group5-goblin-greed.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/characters/Characters.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/characters/Player.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/images/player/goblin_dn1.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/images/player/goblin_dn2.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/images/player/goblin_lf1.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/images/player/goblin_lf2.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/images/player/goblin_rt1.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/images/player/goblin_rt2.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/images/player/goblin_up1.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/images/player/goblin_up2.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/main/GamePanel.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/main/KeyHandler.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameBoard/main/Main.class" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameLogic/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/GameLogic/Game.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/Players/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/group5-goblin-greed/com/Players/Player.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/GUITest.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/characters/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/characters/Player.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/images/player/goblin_dn1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/goblin_dn1.png" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/images/player/goblin_dn2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/goblin_dn2.png" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/images/player/goblin_lf1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/goblin_lf1.png" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/images/player/goblin_lf2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/goblin_lf2.png" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/images/player/goblin_rt1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/goblin_rt1.png" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/images/player/goblin_rt2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/goblin_rt2.png" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/images/player/goblin_up1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/goblin_up1.png" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/images/player/goblin_up2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/goblin_up2.png" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -28,7 +54,7 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="dev" />
++        <entry key="$PROJECT_DIR$" value="sarah" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -54,34 +80,30 @@
+   <component name="PropertiesComponent">
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$/json-simple-1.1.jar" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/../group4-goblin-greed-capstone-Group4-Dev" />
+     <property name="project.structure.last.edited" value="Artifacts" />
+     <property name="project.structure.proportion" value="0.15" />
+     <property name="project.structure.side.proportion" value="0.2" />
+   </component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Capstone_Goblin_Greed\res\player" />
++      <recent name="C:\Capstone_Goblin_Greed\src\com\GameBoard\images\player" />
+       <recent name="C:\Users\lichysar\Documents\GitHub\Capstone_Goblin_Greed\src\com\GameBoard\images\player" />
+       <recent name="C:\Users\lichysar\Documents\GitHub\Capstone_Goblin_Greed\src\com\GameBoard\images" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Application.Main (1)">
+-    <configuration name="GUITest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="GUITest" />
++  <component name="RunManager" selected="Application.GUITESTMain">
++    <configuration name="GUITESTMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="GUITest.GUITESTMain" />
+       <module name="group5-goblin-greed" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="com.GameLogic.Game" />
++    <configuration name="GUITest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="GUITest.GUITest" />
+       <module name="group5-goblin-greed" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="com.GameLogic.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+@@ -113,11 +135,11 @@
+     </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Application.GUITESTMain" />
++        <item itemvalue="Application.Main" />
+         <item itemvalue="Application.Main (1)" />
+-        <item itemvalue="Application.Main" />
+-        <item itemvalue="Application.Game" />
++        <item itemvalue="JAR Application.group5-goblin-greed.jar" />
+         <item itemvalue="Application.GUITest" />
+-        <item itemvalue="JAR Application.group5-goblin-greed.jar" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -137,7 +159,19 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State />
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="sarah" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
+           </value>
+         </entry>
+       </map>
+Index: group5-goblin-greed.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\r\n    <exclude-output />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src\" isTestSource=\"false\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n    <orderEntry type=\"library\" name=\"json-simple-1.1\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"json-simple-1.11\" level=\"project\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/group5-goblin-greed.iml b/group5-goblin-greed.iml
+--- a/group5-goblin-greed.iml	(revision 17f4da4b0ea82e9229ad5192b52951331a4ff624)
++++ b/group5-goblin-greed.iml	(date 1649364969475)
+@@ -3,7 +3,9 @@
+   <component name="NewModuleRootManager" inherit-compiler-output="true">
+     <exclude-output />
+     <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$/res" type="java-resource" />
+       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
++      <excludeFolder url="file://$MODULE_DIR$/src/com/GameBoard" />
+     </content>
+     <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />
