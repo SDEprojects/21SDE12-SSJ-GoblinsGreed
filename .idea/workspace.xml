@@ -9,8 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c6f596e-3047-4150-9fb0-0799964967fa" name="Changes" comment="Added dialogue and health, AB#565">
+    <list default="true" id="6c6f596e-3047-4150-9fb0-0799964967fa" name="Changes" comment="Added dialogue and soundFX, AB#421">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/characters/Characters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/characters/Characters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/characters/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/characters/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/main/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/main/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/main/KeyHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,12 +54,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Goblins_Greed-dev"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Goblins_Greed-dev&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Capstone_Goblin_Greed\resources" />
@@ -141,7 +145,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1648173238158</updated>
-      <workItem from="1649958320445" duration="972000" />
+      <workItem from="1649958320445" duration="1606000" />
+      <workItem from="1649992391067" duration="60000" />
+      <workItem from="1649992627320" duration="604000" />
     </task>
     <task id="LOCAL-00001" summary="Added title screen music button(maybe just will add it to the title menu), AB#421">
       <created>1649707564457</created>
@@ -171,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649958695071</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added dialogue and soundFX, AB#421">
+      <created>1649963769626</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1649963769626</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,7 +206,8 @@
     <MESSAGE value="music button starts the song, AB#421" />
     <MESSAGE value="SoundFX implemented, Music works, AB#421, AB#535" />
     <MESSAGE value="Added dialogue and health, AB#565" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added dialogue and health, AB#565" />
+    <MESSAGE value="Added dialogue and soundFX, AB#421" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added dialogue and soundFX, AB#421" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
