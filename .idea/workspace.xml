@@ -9,13 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c6f596e-3047-4150-9fb0-0799964967fa" name="Changes" comment="Added dialogue and soundFX, AB#421">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/characters/Characters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/characters/Characters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/characters/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/characters/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/main/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/GameBoard/main/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/GameBoard/main/KeyHandler.java" afterDir="false" />
-    </list>
+    <list default="true" id="6c6f596e-3047-4150-9fb0-0799964967fa" name="Changes" comment="Monsters have health bar and can die, AB#627" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,13 +29,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GithubProjectSettings">
-    <option name="branchProtectionPatterns">
-      <list>
-        <option value="dev" />
-      </list>
-    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -147,7 +134,7 @@
       <updated>1648173238158</updated>
       <workItem from="1649958320445" duration="1606000" />
       <workItem from="1649992391067" duration="60000" />
-      <workItem from="1649992627320" duration="604000" />
+      <workItem from="1649992627320" duration="2265000" />
     </task>
     <task id="LOCAL-00001" summary="Added title screen music button(maybe just will add it to the title menu), AB#421">
       <created>1649707564457</created>
@@ -184,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649963769626</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Monsters have health bar and can die, AB#627">
+      <created>1650033004136</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1650033004136</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +189,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="MusicStuff" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -207,7 +213,8 @@
     <MESSAGE value="SoundFX implemented, Music works, AB#421, AB#535" />
     <MESSAGE value="Added dialogue and health, AB#565" />
     <MESSAGE value="Added dialogue and soundFX, AB#421" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added dialogue and soundFX, AB#421" />
+    <MESSAGE value="Monsters have health bar and can die, AB#627" />
+    <option name="LAST_COMMIT_MESSAGE" value="Monsters have health bar and can die, AB#627" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
